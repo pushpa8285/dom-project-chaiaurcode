@@ -1,4 +1,4 @@
-const form = decodeURIComponent.querySelector("form");
+const form = document.querySelector("form");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -13,6 +13,7 @@ form.addEventListener("submit", function (e) {
     results.innerHTML = `please give a valid weight $(weight)`;
   } else {
     const bmi = (weight / ((height * height) / 10000)).toFixed(2);
-    results.innerHTML = `<span>$(bmi)</span>`;
+    results.innerHTML = `<span>${bmi}</span>`;
+    console.log(bmi)
   }
 });
