@@ -15,22 +15,34 @@ let nkumGuess = 1;
 let playGame = true;
 
 if(playGame){
-    submit
+    submit.addEventListener('click', function(e){
+        e.preventDefault();
+    const guess = parseInt(guessField.value);
+    console.log(guess)
+    validateGuess(guess);
+    })
 }
 
 function validateGuess(guess){
-    //
+    //for checking a valid number
+if(isNaN(guess)){
+    alert('Please enter a valid numbet')
+} else if(guess < 1){
+    alert('Please enter a ')
+} else if(guess > 100){
+    alert('Please enter a ')
+}
 }
 
 function checkGuess(guess){
-    //
+    //checking for nearest to the number
 }
 
 function displayGuess(guess){
     //
 }
 
-function displayMessage(guess){
+function displayMessage(message){
     //
 }
 
