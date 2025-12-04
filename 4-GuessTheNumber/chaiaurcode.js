@@ -50,17 +50,17 @@ function checkGuess(guess) {
     displayMessage(`You guessed it right`);
     endGame();
   } else if (guess < randomNumber) {
-    displayMessage(`number is TOOO low`);
+    displayMessage(`number is Too low`);
   } else if (guess > randomNumber) {
-    displayMessage(`numberis TOOO High`);
+    displayMessage(`number is Too High`);
   }
 }
 
 function displayGuess(guess) {
-  userInput.value = ``;
-  guessSlot.innerHTML += `${guess} `;
+  guessField.value = ``;
+  guesses.innerHTML += `${guess} `;
   numGuess++;
-  remaining.innerHTML = `${11 - numGuess} `;
+  lastResult.innerHTML = `${11 - numGuess} `;
 }
 
 function displayMessage(message) {
@@ -68,8 +68,8 @@ function displayMessage(message) {
 }
 
 function endGame(guess) {
-  userInput.value = "";
-  userInput.setAttribute("disable", "");
+  guessField.value = "";
+  guessField.setAttribute("disable", "");
   p.classList.add("button");
   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
   startOver.appenChild(p);
@@ -83,9 +83,9 @@ function newGame(guess) {
     randomNumber = parseInt(Math.random() * 100 + 1);
     prevGuess = [];
     numGuess = 1;
-    guessSlot.innerHTML = "";
-    remaining.innerHTML = `${11 - numGuess} `;
-    userInput.removeAttribute("disabled");
+    guesses.innerHTML = "";
+    lastResult.innerHTML = `${11 - numGuess} `;
+    guessField.removeAttribute("disabled");
     statusbar.removeChild(p);
 
     playGame = true;
